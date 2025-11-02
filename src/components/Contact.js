@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import "../styles/App.css";
 
-const Contact = () => {
+function Contact() {
+  const [text, setText] = useState("");
+  const fullText = "Let's Connect 💬";
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setText(fullText.slice(0, i + 1));
+      i++;
+      if (i === fullText.length) clearInterval(interval);
+    }, 100);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="section contact" id="contact">
+    <section className="section contact-section">
       <div className="content">
-        <h1>Contact</h1>
-        <p>Let's collaborate! Reach me at:</p>
-        <p className="email">📧 parveenatienza@example.com</p>
-        <a href="mailto:parveenatienza@example.com" className="btn">Send a Message</a>
+        <h2 className="title typewriter-glow">{text}</h2>
+        <p className="subtitle">Open for collaborations, projects, and cool ideas.</p>
+        <a href="mailto:parveen@example.com" className="contact-btn">
+          ✉️ Send Message
+        </a>
       </div>
     </section>
   );
-};
+}
 
 export default Contact;

@@ -1,111 +1,107 @@
-* {
+body, html, #root, .App {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at 20% 20%, #050014, #090928, #0b002b);
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-body, html, .App {
-  height: 100%;
+.scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #6a0dad, #00f0ff);
+  z-index: 1000;
+  transition: width 0.25s ease-out;
+}
+
+#tsparticles {
+  position: fixed;
   width: 100%;
-  background: linear-gradient(135deg, #0a002b, #19004d, #2e027d);
-  color: #fff;
-  overflow-x: hidden;
+  height: 100%;
+  z-index: -1;
 }
 
 .section {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 80px 20px;
-  transition: all 0.6s ease;
+  padding: 2rem;
 }
 
-.section .content {
-  max-width: 800px;
-}
-
-h1 {
+.title {
   font-size: 3rem;
-  margin-bottom: 15px;
-  color: #b982ff;
+  margin-bottom: 1rem;
+  color: #b084f8;
 }
 
-h2 {
-  font-size: 1.6rem;
-  color: #9abaff;
-  margin-bottom: 10px;
+.subtitle {
+  color: #c5c5ff;
+  font-size: 1.2rem;
 }
 
-p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+/* Neon glow typewriter effect */
+.typewriter-glow {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #00f0ff;
+  animation: blink 0.7s infinite, glow 3s ease-in-out infinite alternate;
 }
 
-.btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.3s, background 0.3s;
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+@keyframes glow {
+  from { text-shadow: 0 0 10px #8a2be2, 0 0 30px #00f0ff; }
+  to { text-shadow: 0 0 20px #a020f0, 0 0 50px #00e0ff; }
 }
 
-/* Project cards */
-.project-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 40px;
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 1.5rem;
   border-radius: 15px;
-  padding: 25px;
-  transition: all 0.3s;
-  box-shadow: 0 0 15px rgba(147, 51, 234, 0.3);
+  width: 250px;
+  transition: transform 0.4s, background 0.4s;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.1);
 }
 
-/* Contact section */
-.email {
+.contact-btn {
+  margin-top: 2rem;
+  background: linear-gradient(90deg, #6a0dad, #00f0ff);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
   font-weight: bold;
-  color: #c084fc;
-  margin-bottom: 20px;
+  transition: 0.3s;
 }
 
-/* Mobile responsiveness */
+.contact-btn:hover {
+  background: linear-gradient(90deg, #00f0ff, #6a0dad);
+  transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.3rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .project-list {
-    grid-template-columns: 1fr;
-  }
+  .title { font-size: 2.2rem; }
+  .subtitle { font-size: 1rem; }
+  .project-card { width: 90%; }
 }

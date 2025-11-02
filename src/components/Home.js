@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import "../styles/App.css";
 
-const Home = () => {
+function Home() {
+  const [text, setText] = useState("");
+  const fullText = "Hi, I'm Parveen 👋";
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setText(fullText.slice(0, i + 1));
+      i++;
+      if (i === fullText.length) clearInterval(interval);
+    }, 100);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="section home" id="home">
+    <section className="section home-section">
       <div className="content">
-        <h1>Hi, I'm Parveen Atienza</h1>
-        <h2>Frontend Developer & Designer</h2>
-        <p>
-          Crafting modern, interactive, and aesthetic web experiences with clean code and creativity.
-        </p>
-        <a href="#projects" className="btn">View My Work</a>
+        <h1 className="title typewriter-glow">{text}</h1>
+        <p className="subtitle">Crafting futuristic web experiences with passion and precision.</p>
       </div>
     </section>
   );
-};
+}
 
 export default Home;
