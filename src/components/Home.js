@@ -1,18 +1,18 @@
 import React from "react";
-import "../styles/Home.css";
 
-function Home() {
+const Home = () => {
   return (
-    <div className="home">
-      <h2>Hi, I'm Parveen 👋</h2>
-      <p>
-        I'm a passionate web developer who loves building modern, creative, and functional web applications using React and .NET.
-      </p>
-      <button onClick={() => window.location.href = "/projects"}>
-        View My Projects
-      </button>
-    </div>
+    <section className="section home" id="home">
+      <div className="content">
+        <h1>Hi, I'm Parveen Atienza</h1>
+        <h2>Frontend Developer & Designer</h2>
+        <p>
+          Crafting modern, interactive, and aesthetic web experiences with clean code and creativity.
+        </p>
+        <a href="#projects" className="btn">View My Work</a>
+      </div>
+    </section>
   );
-}
+};
 
 export default Home;

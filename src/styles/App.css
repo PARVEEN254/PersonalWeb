@@ -1,15 +1,111 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fffaf4;
-  color: #333;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body, html, .App {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #0a002b, #19004d, #2e027d);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  transition: all 0.6s ease;
+}
+
+.section .content {
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #b982ff;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #9abaff;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+/* Project cards */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s;
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.3);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+}
+
+/* Contact section */
+.email {
+  font-weight: bold;
+  color: #c084fc;
+  margin-bottom: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,26 +1,27 @@
 import React from "react";
-import "../styles/Projects.css";
 
-function Projects() {
-  const projects = [
-    { title: "Pokédex App", description: "A modern Pokédex built with React and .NET API." },
-    { title: "Tourism Website", description: "Tourist spot management platform with user/admin features." },
-    { title: "Property Tracker", description: "Track rental properties with map integration." },
-  ];
-
+const Projects = () => {
   return (
-    <div className="projects">
-      <h2>My Projects</h2>
-      <div className="project-grid">
-        {projects.map((p, i) => (
-          <div className="project-card" key={i}>
-            <h3>{p.title}</h3>
-            <p>{p.description}</p>
+    <section className="section projects" id="projects">
+      <div className="content">
+        <h1>Projects</h1>
+        <div className="project-list">
+          <div className="project-card">
+            <h2>🏠 Property Tracker</h2>
+            <p>A real estate dashboard with interactive map and MySQL integration.</p>
           </div>
-        ))}
+          <div className="project-card">
+            <h2>🔥 Pokédex</h2>
+            <p>A full-stack Pokédex with image uploads, JWT authentication, and React frontend.</p>
+          </div>
+          <div className="project-card">
+            <h2>💎 Personal Portfolio</h2>
+            <p>This very site — a futuristic neon-themed single-page experience.</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default Projects;

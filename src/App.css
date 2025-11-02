@@ -1,38 +1,138 @@
-.App {
+/* GLOBAL STYLES */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 15, 40, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+.logo {
+  font-size: 1.5rem;
+  color: #9f7aea;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #b8b8ff;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #7dd3fc;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
+  background: radial-gradient(circle at top, rgba(99,102,241,0.2), transparent);
+}
+.hero h1 {
+  font-size: 3rem;
+  color: #a78bfa;
+}
+.hero h2 {
+  font-weight: 400;
+  color: #93c5fd;
+}
+.hero p {
+  margin-top: 10px;
+  color: #dbeafe;
+}
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.btn:hover {
+  transform: scale(1.05);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* PROJECT CARDS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-8px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* CONTACT FORM */
+.contact-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 12px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #a1a1aa;
+  background: rgba(20, 20, 40, 0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-inner {
+    flex-direction: column;
+    gap: 10px;
   }
 }
