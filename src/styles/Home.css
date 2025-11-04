@@ -1,35 +1,139 @@
-.home {
-  height: 90vh;
-  background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
-  color: white;
+.home-section {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  padding: 4rem 6rem;
+  min-height: 100vh;
+  color: white;
+  background: transparent; /* Same as rest of page */
+  flex-wrap: wrap;
 }
 
-.home h2 {
+.home-left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.typewriter {
   font-size: 2.5rem;
+  font-weight: bold;
+  color: #b084f8;
+  text-shadow: 0 0 10px #8a2be2, 0 0 20px #00f0ff;
   margin-bottom: 10px;
 }
 
-.home p {
-  max-width: 600px;
-  line-height: 1.5;
+.role-text {
+  font-size: 1.3rem;
+  color: #00f0ff;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s;
 }
 
-.home button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #ff7b00, #ffb347);
-  color: white;
+.home-subtitle {
   font-size: 1rem;
-  cursor: pointer;
+  color: #ddd;
+  line-height: 1.5;
+  max-width: 500px;
 }
 
-.home button:hover {
-  opacity: 0.9;
+/* Social icons */
+.home-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 15px;
+}
+
+.home-icons a {
+  font-size: 1.8rem;
+  color: #00f0ff;
+  transition: all 0.3s ease;
+}
+
+.home-icons a:hover {
+  color: #b084f8;
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #b084f8;
+}
+
+.home-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  margin-top: 20px;
+}
+
+.video-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-video {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  animation: float 3s ease-in-out infinite, neonGlow 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 20px #00f0ff, 0 0 30px #8a2be2, 0 0 50px #b084f8;
+}
+
+/* Floating animation for video */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Neon glow animation for video */
+@keyframes neonGlow {
+  from {
+    box-shadow: 0 0 15px #00f0ff, 0 0 25px #8a2be2, 0 0 40px #b084f8;
+  }
+  to {
+    box-shadow: 0 0 25px #00f0ff, 0 0 40px #8a2be2, 0 0 60px #b084f8;
+  }
+}
+
+/* Fade-in animation for role text */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .home-left, .home-right {
+    flex: unset;
+    min-width: unset;
+  }
+
+  .typewriter {
+    font-size: 2rem;
+  }
+
+  .role-text {
+    font-size: 1.1rem;
+  }
+
+  .icon-video {
+    width: 200px;
+    height: 200px;
+  }
+
+  .home-icons a {
+    font-size: 1.5rem;
+  }
 }

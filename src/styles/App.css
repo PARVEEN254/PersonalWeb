@@ -1,3 +1,4 @@
+/* Base Styles */
 body, html, #root, .App {
   margin: 0;
   padding: 0;
@@ -8,6 +9,7 @@ body, html, #root, .App {
   scroll-behavior: smooth;
 }
 
+/* Scroll progress bar */
 .scroll-bar {
   position: fixed;
   top: 0;
@@ -18,6 +20,7 @@ body, html, #root, .App {
   transition: width 0.25s ease-out;
 }
 
+/* Particles background */
 #tsparticles {
   position: fixed;
   width: 100%;
@@ -25,6 +28,7 @@ body, html, #root, .App {
   z-index: -1;
 }
 
+/* Sections */
 .section {
   height: 100vh;
   display: flex;
@@ -34,10 +38,12 @@ body, html, #root, .App {
   padding: 2rem;
 }
 
-.title {
+/* Titles & subtitles */
+.title, .projects-title {
   font-size: 3rem;
-  margin-bottom: 1rem;
   color: #b084f8;
+  text-shadow: 0 0 15px #8a2be2, 0 0 25px #00f0ff;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
@@ -62,6 +68,7 @@ body, html, #root, .App {
   to { text-shadow: 0 0 20px #a020f0, 0 0 50px #00e0ff; }
 }
 
+/* Projects Grid */
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
@@ -76,14 +83,16 @@ body, html, #root, .App {
   padding: 1.5rem;
   border-radius: 15px;
   width: 250px;
-  transition: transform 0.4s, background 0.4s;
+  transition: transform 0.4s, box-shadow 0.4s, background 0.4s;
 }
 
 .project-card:hover {
-  transform: scale(1.1);
-  background: rgba(255,255,255,0.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(106, 13, 173, 0.6);
+  background: rgba(255,255,255,0.08);
 }
 
+/* Contact button */
 .contact-btn {
   margin-top: 2rem;
   background: linear-gradient(90deg, #6a0dad, #00f0ff);
@@ -100,8 +109,135 @@ body, html, #root, .App {
   transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
-  .title { font-size: 2.2rem; }
-  .subtitle { font-size: 1rem; }
-  .project-card { width: 90%; }
+/* Responsive */
+@media (max-width: 900px) {
+  .title, .projects-title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+}
+
+/* About Section */
+.about-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+  padding: 4rem 2rem;
+  background: transparent !important;
+  color: white;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+/* Profile Image */
+.about-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(106, 13, 173, 0.6);
+}
+
+/* About content */
+.about-content {
+  max-width: 600px;
+}
+
+.about-content h1 {
+  font-size: 3rem;
+  color: #b084f8;
+  text-shadow: 0 0 15px #8a2be2, 0 0 25px #00f0ff;
+  margin-bottom: 1rem;
+}
+
+.about-content .intro {
+  font-size: 1.2rem;
+  color: #ddd;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-content .details {
+  font-size: 1rem;
+  color: #aaa;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #00f0ff;
+  font-weight: 600;
+}
+
+/* Skills */
+.skills {
+  margin-top: 1.5rem;
+}
+
+.skills span {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.skills span:hover {
+  transform: scale(1.1);
+  background: rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+}
+
+/* Responsive About */
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image {
+    margin-bottom: 2rem;
+  }
+
+  .about-content h1 {
+    font-size: 2.2rem;
+  }
 }
